@@ -1,11 +1,9 @@
-
-///////////////////////////////ORIGINAL CODE IS BELOW COMMENTED THIS IS JUST A TEST////////////////////////////////////////////////////////////
-(function (window){
+(function (window) {
     'use strict';
     var App = window.App || {};
 
     class Truck {
-        constructor(truckId, db){
+        constructor(truckId, db) {
             this.truckId = truckId;
             this.db = db;
         }
@@ -14,12 +12,12 @@
             this.db.add(order.emailAddress, order);
         }
 
-        deliverOrder(customerId){
+        deliverOrder(customerId) {
             console.log('Delivering order for ' + customerId);
             this.db.remove(customerId);
         }
 
-        printOrders(){
+        printOrders() {
             var customerIdArray = Object.keys(this.db.getAll());
 
             console.log('Truck #' + this.truckId + ' has pending orders:');
@@ -31,36 +29,4 @@
 
     App.Truck = Truck;
     window.App = App;
-}) (window);
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// (function (window){
-//     'use strict';
-//     var App = window.App || {};
-
-//     function Truck(truckId, db) {
-//         this.truckId = truckId;
-//         this.db = db;
-//     }
-
-//     Truck.prototype.createOrder = function (order) {
-//         console.log('Addind order for ' + order.emailAddress);
-//         this.db.add(order.emailAddress, order);
-//     };
-
-//     Truck.prototype.deliverOrder = function (customerId) {
-//         console.log('Delivering order for ' + customerId);
-//         this.db.remove(customerId);
-//     };
-
-//     Truck.prototype.printOrders = function () {
-//         var customerIdArray = Object.keys(this.db.getAll());
-
-//         console.log('Truck #' + this.truckId + ' has pending orders:');
-//         customerIdArray.forEach(function (id) {
-//             console.log(this.db.get(id));
-//         }.bind(this));
-//     };
-
-//     App.Truck = Truck;
-//     window.App = App;
-// }) (window);
+})(window);

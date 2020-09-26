@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+</head>
+
+<body class="container">
+  <header>
+    <h1>Payment From</h1>
+    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <h2>Contact Information</h2>
+          <fieldset>
+            <legend>Title</legend>
+            <div class="radio">
+              <label>
+                <input type="radio" name="title" value="ace">
+                Ace
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="title" value="king" checked>
+                King
+              </label>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="title" value="queen">
+                Queen
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="name">Name<strong><abbr title="required">*</abbr></strong></label>
+            <input class="form-control" name="username" id="name" placeholder="Kenny Omega">
+          </div>
+          <div class="form-group">
+            <label for="mail">Email<strong><abbr title="required">*</abbr></strong></label>
+            <input class="form-control" type="eamil" name="usermail" id="mail" value=""
+              placeholder="cleaner@njpw.com.jp">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password<strong><abbr title="required">*</abbr></strong></label>
+            <input class="form-control" type="password" name="password" id="pwd" value="">
+          </div>
+
+
+          <!-------------------------------------------------------------------------------------------------------------------------------------------------------->
+          <h3>Payment Info</h3>
+          <fieldset>
+            <legend>Payment Form</legend>
+
+            <div>
+              <label for="card">CardType<strong><abbr title="required">*</abbr></strong></label>
+              <select name="type" id="card" class="form-control">
+                <option value="">None</option>
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="AmericanExpress">American Express</option>
+              </select>
+            </div>
+            <div>
+              <label for="number">Card Number<strong><abbr title="required">*</abbr></strong></label>
+              <input type="tel" id="number" name="cardnumber" placeholder="1234......">
+            </div>
+            <div>
+              <label for="date">Expiration Date<strong><abbr title="required">*</abbr></strong></label>
+
+              <input type="date" name="expiration" id="date">
+            </div>
+          </fieldset>
+
+          <div id="confirm" class="modal">
+            <p></p>
+            <a href="#" rel="modal:close">Close</a>
+          </div>
+
+          <p><a href="#confirm" rel="modal:open"> </a></p>
+
+
+          <button type="submit">Validate the payment</button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/main_pay.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+</body>
+
+</html>
