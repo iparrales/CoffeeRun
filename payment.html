@@ -1,95 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Payment form example</title>
-    <link href="payment-form.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </head>
 
-<body>
-    <form method="post">
-        <h1>Payment form</h1>
-        <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
-        <section>
-            <h2>Contact information</h2>
-            <fieldset>
-              <legend>Title</legend>
-              <ul>
-                  <li>
-                    <label for="title_1">
-                      <input type="radio" id="title_1" name="title" value="A">
-                      Ace
-                    </label>
-                  </li>
-                  <li>
-                    <label for="title_2">
-                      <input type="radio" id="title_2" name="title" value="K" >
-                      King
-                    </label>
-                  </li>
-                  <li>
-                    <label for="title_3">
-                      <input type="radio" id="title_3" name="title" value="Q">
-                      Queen
-                    </label>
-                  </li>
-              </ul>
-            </fieldset>
-            <p>
-              <label for="name">
-                <span>Name: </span>
-                <strong><abbr title="required">*</abbr></strong>
+<body class="container">
+  <header>
+    <h1>Payment From</h1>
+    <p>Required fields are followed by <strong><abbr title="required">*</abbr></strong>.</p>
+  </header>
+  <section>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <form data-coffee-order="form">
+          <h2>Contact Information</h2>
+          <fieldset>
+            <legend>Title</legend>
+            <div class="radio">
+              <label>
+                <input type="radio" name="title" value="ace">
+                Ace
               </label>
-              <input type="text" id="name" name="username">
-            </p>
-            <p>
-              <label for="mail">
-                <span>E-mail: </span>
-                <strong><abbr title="required">*</abbr></strong>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="title" value="king" checked>
+                King
               </label>
-              <input type="email" id="mail" name="usermail">
-            </p>
-            <p>
-              <label for="pwd">
-                <span>Password: </span>
-                <strong><abbr title="required">*</abbr></strong>
+            </div>
+            <div class="radio">
+              <label>
+                <input type="radio" name="title" value="queen">
+                Queen
               </label>
-              <input type="password" id="pwd" name="password">
-            </p>
-        </section>
-        <section>
-            <h2>Payment information</h2>
-            <p>
-              <label for="card">
-                <span>Card type:</span>
-              </label>
-              <select id="card" name="usercard">
-                <option value="visa">Visa</option>
-                <option value="mc">Mastercard</option>
-                <option value="amex">American Express</option>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="name">Name<strong><abbr title="required">*</abbr></strong></label>
+            <input class="form-control" name="username" id="name" placeholder="Kenny Omega">
+          </div>
+          <div class="form-group">
+            <label for="mail">Email<strong><abbr title="required">*</abbr></strong></label>
+            <input class="form-control" type="eamil" name="usermail" id="mail" value=""
+              placeholder="cleaner@njpw.com.jp">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password<strong><abbr title="required">*</abbr></strong></label>
+            <input class="form-control" type="password" name="password" id="pwd" value="">
+          </div>
+
+
+          <!-------------------------------------------------------------------------------------------------------------------------------------------------------->
+          <h3>Payment Info</h3>
+          <fieldset>
+            <legend>Payment Form</legend>
+
+            <div>
+              <label for="card">CardType<strong><abbr title="required">*</abbr></strong></label>
+              <select name="type" id="card" class="form-control">
+                <option value="">None</option>
+                <option value="Visa">Visa</option>
+                <option value="Mastercard">Mastercard</option>
+                <option value="AmericanExpress">American Express</option>
               </select>
-            </p>
-            <p>
-              <label for="number">
-                <span>Card number:</span>
-                <strong><abbr title="required">*</abbr></strong>
-              </label>
-                <input type="tel" id="number" name="cardnumber">
-            </p>
-            <p>
-              <label for="date">
-                <span>Expiration date:</span>
-                <strong><abbr title="required">*</abbr></strong>
-                <em>formatted as mm/dd/yyyy</em>
-              </label>
-              <input type="date" id="date" name="expiration">
-            </p>
-        </section>
-        <section>
-            <p> <button type="submit">Validate the payment</button> </p>
-        </section>
-    </form>
+            </div>
+            <div>
+              <label for="number">Card Number<strong><abbr title="required">*</abbr></strong></label>
+              <input type="tel" id="number" name="cardnumber" placeholder="1234......">
+            </div>
+            <div>
+              <label for="date">Expiration Date<strong><abbr title="required">*</abbr></strong></label>
+
+              <input type="date" name="expiration" id="date">
+            </div>
+          </fieldset>
+
+          <div id="confirm" class="modal">
+            <p></p>
+            <a href="#" rel="modal:close">Close</a>
+          </div>
+
+          <p><a href="#confirm" rel="modal:open"> </a></p>
+
+
+          <button type="submit">Validate the payment</button>
+
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
+  <script src="scripts/formhandler.js" charset="utf-8"></script>
+  <script src="scripts/datastore.js" charset="utf-8"></script>
+  <script src="scripts/main_pay.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
 </body>
 
 </html>
